@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Feedback Form</h2>
+
+    <form id="feedbackForm">
+        <input type="text" id="name" placeholder="Your Name" required>
+
+        <textarea id="message" placeholder="Your Feedback" required></textarea>
+
+        <select id="rating">
+            <option value="5">⭐ 5</option>
+            <option value="4">⭐ 4</option>
+            <option value="3">⭐ 3</option>
+            <option value="2">⭐ 2</option>
+            <option value="1">⭐ 1</option>
+        </select>
+
+        <button type="submit">Submit</button>
+    </form>
+    <h3>Live Feedback</h3>
+<div id="feedbackList"></div>
+
+    <p id="responseMsg"></p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
