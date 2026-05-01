@@ -7,10 +7,10 @@ app.use(cors());
 app.use(express.json());
 
 const db = mysql.createConnection({
-     host: "localhost",
-    user: "root",
-   password: "Sahil@7015",
-    database: "feedback_db"
+    host: process.env.DB_HOST || "localhost", // Uses DB_HOST from env, defaults to localhost if not found
+    user: process.env.DB_USER || "root",
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME
 });
 
 db.connect(err => {
