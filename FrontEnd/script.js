@@ -6,14 +6,16 @@ document.getElementById("feedbackForm").addEventListener("submit", function(e) {
           message: document.getElementById("message").value,
       rating: document.getElementById("rating").value
     };
+const BACKEND_URL = import.meta.env.VITE_API_URL; 
 
-    fetch("http://localhost:3000/submit", {
-        method: "POST",
-        headers: {
-         "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-    })
+
+    fetch(`${BACKEND_URL}/submit`, { 
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+})
     .then(res => res.text())
     .then(() => {
         loadFeedback();
@@ -25,9 +27,9 @@ document.getElementById("feedbackForm").addEventListener("submit", function(e) {
 
 // function to load feedback form database
 function loadFeedback() {
-    fetch("http://localhost:3000/feedbacks")
+    fetch(`${BACKEND_URL}/items`) // Add the correct endpoint path here
     .then(res => res.json())
-     .then(data => {
+    .then(data => {
         let html = "";
 
         data.forEach(item => {
