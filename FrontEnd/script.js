@@ -1,3 +1,5 @@
+const BACKEND_URL = "http://localhost:3000" ||import.meta.env.VITE_API_URL;
+
 document.getElementById("feedbackForm").addEventListener("submit", function(e) {
     e.preventDefault();
 
@@ -6,8 +8,6 @@ document.getElementById("feedbackForm").addEventListener("submit", function(e) {
           message: document.getElementById("message").value,
       rating: document.getElementById("rating").value
     };
-const BACKEND_URL = import.meta.env.VITE_API_URL; 
-
 
     fetch(`${BACKEND_URL}/submit`, { 
     method: "POST",
@@ -27,7 +27,7 @@ const BACKEND_URL = import.meta.env.VITE_API_URL;
 
 // function to load feedback form database
 function loadFeedback() {
-    fetch(`${BACKEND_URL}/items`) // Add the correct endpoint path here
+    fetch(`${BACKEND_URL}/feedbacks`) // Add the correct endpoint path here
     .then(res => res.json())
     .then(data => {
         let html = "";
