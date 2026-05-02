@@ -1,4 +1,4 @@
-const BACKEND_URL = "http://localhost:3000" ||import.meta.env.VITE_API_URL;
+const BACKEND_URL = import.meta.env.VITE_API_URL ;
 
 document.getElementById("feedbackForm").addEventListener("submit", function(e) {
     e.preventDefault();
