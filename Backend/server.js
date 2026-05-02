@@ -8,7 +8,6 @@ const cors = require("cors");
 const app = express();
 app.use(cors());
 app.use(express.json());
-
 const db = mysql.createConnection({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
@@ -16,7 +15,7 @@ const db = mysql.createConnection({
   database: process.env.DB_NAME,
   port: process.env.DB_PORT,
   ssl: {
-    ca: fs.readFileSync('./ca.pem') 
+    ca: process.env.DB_CA_CERT
   }
 });
 
