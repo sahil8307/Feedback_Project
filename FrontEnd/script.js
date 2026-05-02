@@ -1,4 +1,4 @@
-const BACKEND_URL = import.meta.env.VITE_API_URL ;
+const BACKEND_URL = "https://feedback-project-ou29.onrender.com ";
 
 document.getElementById("feedbackForm").addEventListener("submit", function(e) {
     e.preventDefault();
